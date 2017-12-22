@@ -2,8 +2,8 @@
 title: Numpy Note 1
 date: 2017-12-01 22:27:37
 tags:
-- Python
-- Numpy
+    - Python
+    - Numpy
 ---
 
 Numpy is the fundamental package for scientific computing with Python. It contains among other things:

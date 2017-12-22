@@ -2,8 +2,8 @@
 title: Numpy Note 2
 date: 2017-12-02 13:40:47
 tags:
-- Python
-- Numpy
+    - Python
+    - Numpy
 ---
 
 Ndarray object's internal principle

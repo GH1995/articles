@@ -2,8 +2,8 @@
 title: Network Segment
 date: 2017-12-02 12:46:07
 tags:
-- deep learning
-- Python
+    - Deep Learning
+    - Python
 ---
 
 

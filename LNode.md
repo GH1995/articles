@@ -2,7 +2,7 @@
 title: LNode
 date: 2017-12-21 13:47:08
 tags:
-    - algorithm
+    - Algorithm
 ---
 
 # core

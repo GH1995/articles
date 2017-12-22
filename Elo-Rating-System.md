@@ -2,7 +2,7 @@
 title: Elo Rating System
 date: 2017-11-14 15:13:21
 tags:
-- math
+- Math
 ---
 
 If Player $A$ has a rating of $R_{A}$ and Player $B$ a rating of $R_{B}$, the exact formula (using the logistic curve) for the expected score of Player $A$ is

@@ -2,7 +2,7 @@
 title: 'Stack, Queue and Array'
 date: 2017-12-21 14:07:06
 tags:
-    - algorithm
+    - Algorithm
 ---
 
 ```cpp

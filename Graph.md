@@ -2,7 +2,7 @@
 title: Graph
 date: 2017-12-21 14:22:44
 tags:
-    - algorithm
+    - Algorithm
 ---
 
 ```c

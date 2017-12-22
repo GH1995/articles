@@ -2,7 +2,7 @@
 title: Sequence
 date: 2017-12-03 13:20:04
 tags:
-- Python
+    - Python
 ---
 
 
