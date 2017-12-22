@@ -6,7 +6,7 @@ tags:
 ---
 
 # core
-```c
+```cpp
 typedef struct LNode {
     int data;
     struct LNode *next;
@@ -15,7 +15,7 @@ typedef struct LNode {
 
 # methods
 
-```c
+```cpp
 LinkList CreateListFirst(LinkList &L, int a[], int n);
 LinkList CreateListLast(LinkList &L, int a[], int n);
 
@@ -26,7 +26,7 @@ LNode *LocateLinkList(LinkList L, int x);
 
 ---
 
-```c
+```cpp
 LinkList CreateListFirst(LinkList &L, int a[], int n)
 {
     L = (LinkList)malloc(sizeof(LNode));
@@ -41,7 +41,7 @@ LinkList CreateListFirst(LinkList &L, int a[], int n)
 }
 ```
 
-```c
+```cpp
 LinkList CreateListLast(LinkList &L, int a[], int n)
 {
     L = (LinkList)malloc(sizeof(LNode));
@@ -81,7 +81,7 @@ LNode *LocateLinkList(LinkList L, int x)
     while (p != NULL && p->data != x)
 ```
 
-```c
+```cpp
 Insert *s after *p
     s->next = p->next;
     p->next = s;
