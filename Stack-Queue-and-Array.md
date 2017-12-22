@@ -5,7 +5,7 @@ tags:
     - data structure
 ---
 
-```
+```c
 struct SqStack {
     int elem[MAX];
     int top;
@@ -15,7 +15,7 @@ Push: elem[++top] = e;
 Pop : e = elem[top--];
 ```
 
-```
+```c
 struct SqStack {
     int *base;
     int *top;
@@ -28,7 +28,7 @@ Pop : e = *--top;
 
 ---
 
-```
+```c
 struct SeQueue {
     int data[MAX];
     int rear, front;
