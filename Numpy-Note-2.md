@@ -6,25 +6,25 @@ tags:
     - Numpy
 ---
 
-Ndarray object's internal principle
+## Ndarray object's internal principle
 
 - a pointer to array
 - dtype
 - shape (tuple)
 - stride `np.ones((3, 4, 5), dtype = np.float64).stride`
 
-Advanced array operation
+## Advanced array operation
 
-Broadcasting
+## Broadcasting
 
-Ufunc advanced application
+## Ufunc advanced application
 
-Struction and record array
+## Struction and record array
 
-More array
+## More array
 
-Matrix class
+## Matrix class
 
-Input and output of advanced array
+## Input and output of advanced array
 
-Performance
+## Performance

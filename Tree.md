@@ -5,8 +5,9 @@ tags:
     - Algorithm
 ---
 
-# Binary Tree
-## core
+## Binary Tree
+
+### core
 ```c
 typedef struct BiTNode {
     int data;
@@ -14,7 +15,7 @@ typedef struct BiTNode {
 } BiTNode, *BiTree;
 ```
 
-## methods
+### methods
 
 ```c
 void PreOrder(BiTree b);
@@ -25,9 +26,9 @@ void LevelOrder(BiTree b);
 
 ---
 
-# Thread Binary Tree
+## Thread Binary Tree
 
-## core
+### core
 
 ```c
 enum PointerTag {Link, Thread};

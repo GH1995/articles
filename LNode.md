@@ -5,7 +5,7 @@ tags:
     - Algorithm
 ---
 
-# core
+## core
 ```cpp
 typedef struct LNode {
     int data;
@@ -13,7 +13,7 @@ typedef struct LNode {
 }LNode, *LinkList;
 ```
 
-# methods
+## methods
 
 ```cpp
 LinkList CreateListFirst(LinkList &L, int a[], int n);
