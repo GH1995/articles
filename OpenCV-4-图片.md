@@ -10,15 +10,17 @@ tags:
 - `cv2.imshow()`
 - `cv2.imwrite()`
 
----
+    ---
 
-# 读入图片
-
-`cv2.imread()`
+# 读入图片 `cv2.imread()`
 
 - `cv2.IMREAD_COLOR`
 - `cv2.IMREAD_GRAYSCALE`
 
+---
+
 # 显示图片
+
+---
 
 # 保存图片
