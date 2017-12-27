@@ -13,7 +13,7 @@ tags:
 
 二、OpenCV 中的 GUI 特性
 
-4. 图片
+4. [图片](https://gh1995.github.io/2017/12/26/OpenCV-4-图片)
 5. 视频
 6. OpenCV中的绘图函数
 7. 把鼠标当画笔
