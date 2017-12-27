@@ -87,7 +87,7 @@ including contents and datafiles;
 
 ```sql
 create table 表名 (
-列      数据类型,
+    列      数据类型,
 ...
 ) tablespace 表空间;
 ```
