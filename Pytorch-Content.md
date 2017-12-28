@@ -18,32 +18,32 @@ tags:
 
 # Package Reference
 
-- torch
-- torch.Tensor
-- torch.sparse
-- torch.Storage
-- torch.nn
-- torch.nn.functional
-- torch.nn.init
-- torch.optim
-- torch.autograd
-- torch.distributions
-- torch.multiprocessing
-- torch.distributed
-- torch.legacy
-- torch.cuda
-- torch.utils.ffi
-- torch.utils.data
-- torch.utils.model_zoo
-- torch.onnx
+- `torch`
+- `torch.Tensor`
+- `torch.sparse`
+- `torch.Storage`
+- `torch.nn`
+- `torch.nn.functional`
+- `torch.nn.init`
+- `torch.optim`
+- `torch.autograd`
+- `torch.distributions`
+- `torch.multiprocessing`
+- `torch.distributed`
+- `torch.legacy`
+- `torch.cuda`
+- `torch.utils.ffi`
+- `torch.utils.data`
+- `torch.utils.model_zoo`
+- `torch.onnx`
 
 # torchvision Reference
 
 - torchvision
-    - torchvision.datasets
-    - torchvision.models
-    - torchvision.transforms
-    - torchvision.utils
+    - `torchvision.datasets`
+    - `torchvision.models`
+    - `torchvision.transforms`
+    - `torchvision.utils`
 
 # Indices and tables
 
