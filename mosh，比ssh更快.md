@@ -15,7 +15,7 @@ mosh 默认采用 `60001` 端口，第二个链接依次递增。
 iptables -I INPUT -p udp --dport 60001 -j ACCEPT
 ```
 
-## 字符集问题
+## 支持中文
 
 ```
 sudo apt install language-pack-zh-hant language-pack-zh-hans
