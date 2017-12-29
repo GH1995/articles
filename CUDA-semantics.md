@@ -70,8 +70,7 @@ for i, x in enumerate(train_loader):
     x = Variable(x.type(dtype))
 ```
 
-`CUDA_VISIBLE_DEVICES`
-`torch.cuda.device`
+`CUDA_VISIBLE_DEVICES` and `torch.cuda.device`
 
 ```python
 print("Outside device is 0") # On device 0 (default in most scenarios)
