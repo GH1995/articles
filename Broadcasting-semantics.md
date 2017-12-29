@@ -47,3 +47,26 @@ x = torch.FloatTensor(5, 2, 4, 1)
 y = torch.FloatTensor(3, 1, 1)
 (x+y).size()
 ```
+
+# In-place sementics
+
+```python
+x = torch.FloatTensor(5, 3, 4, 1)
+y = torch.FloatTensor(3, 1, 1)
+(x.add_(y)).size()
+
+# but
+x = torch.FloatTensor(1, 3, 1)
+y = torch.FloatTensor(3, 1, 7)
+(x.add_(y)).size()
+```
+
+# Backwards compatibility
+
+```python
+torch.add(torch.ones(4, 1), torch.randn(4))
+```
+
+```python
+torch.utils.backcompat.broadcast_warning.enabled=True
+```
