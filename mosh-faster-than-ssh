@@ -1,21 +1,20 @@
 ---
-title: mosh，比ssh更快
+title: mosh, faster than ssh
 date: 2017-12-29 21:10:43
 tags:
     - Linux
 ---
 
-关于 mosh
 
-## 端口
+## port
 
-mosh 默认采用 `60001` 端口，第二个链接依次递增。
+mosh use the port of `60001`, then the secend increasely.
 
 ```
 iptables -I INPUT -p udp --dport 60001 -j ACCEPT
 ```
 
-## 支持中文
+## how to support Chinese
 
 ```
 sudo apt install language-pack-zh-hant language-pack-zh-hans
