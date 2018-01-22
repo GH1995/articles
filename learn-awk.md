@@ -5,7 +5,7 @@ tags:
     - Linux
 ---
 
-# 模式扫描与处理语言 awk
+## 模式扫描与处理语言 awk
 
 ```
 awk '程序' 文件名
@@ -41,7 +41,7 @@ awk '{ print }' 文件名
 awk -f 命令文件 文件名
 ```
 
-## 字段
+### 字段
 ```
 $1, $2, ..., $NF
 ```
@@ -66,7 +66,7 @@ who | awk '{ print $5, $1 }'
 sed 3q /etc/passwd | awk -F: '{ print $1 }'
 ```
 
-## 打印
+### 打印
 
 内置变量`NR`是当前输入记录或行的总数。
 `$0`是整个输入行，未加更改。
@@ -79,7 +79,7 @@ awk '{ print NR, $0}'
 awk '{ printf "%4d %s\n", NR, $0 }'
 ```
 
-## 模式
+### 模式
 
 ```
 awk -F: '$2 == ""' /etc/passwd
@@ -94,14 +94,14 @@ awk -F: '$2 == ""' /etc/passwd
 !($2 == "")
 NF % 2 != 0 # 若为奇数则打印
 lenght($0) > 72 { print "Line", NR, "too long:", substr($0, 1, 60) }
-# substr(s,m,n) 起于m且具有n个字符长，若n被忽略，则使用从m到末尾的子串
+## substr(s,m,n) 起于m且具有n个字符长，若n被忽略，则使用从m到末尾的子串
 ```
 
 ```
 date | awk '{ print substr($4, 1, 5) }'
 ```
 
-## BEGIN 与 END 模式
+### BEGIN 与 END 模式
 
 
 `BEGIN`在第一个输入行之前就被执行：可以用`BEGIN`模式初始化变量，打印标题头或通过指定变量`FS`设置字段分隔符：
@@ -116,7 +116,7 @@ awk 'BEGIN { FS = ":" } $2 == "" ' /etc/passwd
 awk 'END { print NR }'
 ```
 
-## 算术运算与变量
+### 算术运算与变量
 
 求第一列中所有数字之和/平均数
 
@@ -161,7 +161,7 @@ awk '!/totoal$/ { n += int(($1+55) / 56) }
 |      `ORS` | 输出记录分隔符串（默认为换行符）   |
 |       `RS` | 输入记录分隔符字符（默认为换行符） |
 
-## 控制流
+### 控制流
 
 **example:** 查找相邻的、成对的、完全相同的单词
 
@@ -182,7 +182,7 @@ NF > 0 {
 } ' $*
 ```
 
-## 数组
+### 数组
 
 **example:**将每个输入行收集到单个数组元素中，以行数为索引，然后以逆序将其打印输出
 
@@ -228,7 +228,7 @@ echo 9/29/83 | awk '{
 |      `sprintf(fmt,...)` | 根据格式`fmt`格式化                                |
 |       `substr(s, m, n)` | 起始于位置`m`的字串`s`的`n`个字符的子串            |
 
-## 关联数组
+### 关联数组
 
 ```
     { sum[$1] += $2 }
@@ -250,7 +250,7 @@ awk ' {
     } ' $*
 ```
 
-## 字符串
+### 字符串
 
 
 **example:** 将较长的行调整为80列
@@ -275,7 +275,7 @@ BEGIN {
 } '
 ```
 
-## 与shell的交互作用
+### 与shell的交互作用
 
 ```
 awk '{ print $'$1' }'
@@ -313,10 +313,10 @@ END {
 } '
 ```
 
-## 基于 awk 的日历服务
+### 基于 awk 的日历服务
 
 ```
-# calendar: version 3 -- today and tomorrow
+## calendar: version 3 -- today and tomorrow
 awk < $HOME/calendar '
 BEGIN {
     x = "Jan 31 Feb 28 Mar 31 Apr 30 May 31 Jun 30 " \
