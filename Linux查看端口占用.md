@@ -5,7 +5,7 @@ tags:
     - Linux
 ---
 
-## 使用`lsof`
+## `lsof`
 
 list open files
 ```sh
