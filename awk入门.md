@@ -5,7 +5,7 @@ tags:
     - Linux
 ---
 
-```sh
+```
 awk '程序' 文件名
 ```
 
@@ -17,29 +17,34 @@ awk '程序' 文件名
     模式 {操作}
     模式 {操作}
 ```
+
 `awk` 一次一行地读文件名中的输入，依次将每行与每个模式相比较，对每个与行相匹配的模式，执行其对应的操作。
 
-```sh
+```
 awk `/regex/ { print }` 文件名
 ```
+
 省略动作，默认动作是打印相匹配的行
 
-```sh
+
+```
 awk '/regex/' 文件名
 ```
 
 省略模式，被作用到任何输入行
 
-```sh
+```
 awk '{ print }' 文件名
 ```
+
 从一个文件提交程序
 
 ```
 awk -f 命令文件 文件名
 ```
-字段
-`$1, $2, ..., $NF`
+
+字段 `$1, $2, ..., $NF`
+
 `NF`是一个变量，被设置为字段的个数。
 
 ```
@@ -47,29 +52,29 @@ du -a | awk '{ print $2 }'
 who | awk '{ print $1, $5 }'
 who | awk '{ print $5, $1 }'
 ```
+
 分隔符可以不是空白，`-F`指定
 
 
-```sh
+```
 sed 3q /etc/passwd | awk -F: '{ print $1 }'
 ```
 
-打印
-内置变量`NR`是当前输入记录或行的总数。 `$0`是整个输入行，未加更改。
+打印内置变量`NR`是当前输入记录或行的总数。 `$0`是整个输入行，未加更改。
 
-```sh
+```
 awk '{ print NR, $0}'
 ```
 
 `printf`控制输出格式
 
-```sh
+```
 awk '{ printf "%4d %s\n", NR, $0 }'
 ```
 
 模式
 
-```sh
+```
 awk -F: '$2 == ""' /etc/passwd
 ```
 
@@ -78,31 +83,36 @@ awk -F: '$2 == ""' /etc/passwd
 - `$2 !~ /./`
 - `lenght($2) == 0`
 
-```sh
+```
 !($2 == "")
 NF % 2 != 0 # 若为奇数则打印
 lenght($0) > 72 { print "Line", NR, "too long:", substr($0, 1, 60) }
 ## substr(s,m,n) 起于m且具有n个字符长，若n被忽略，则使用从m到末尾的子串
 ```
 
-```sh
+```
 date | awk '{ print substr($4, 1, 5) }'
 ```
+
 BEGIN 与 END 模式
+
 `BEGIN`在第一个输入行之前就被执行：可以用`BEGINi`模式初始化变量，打印标题头或通过指定变量`FS`设置字段分隔符：
 
-```sh
+```
 awk 'BEGIN { FS = ":" } $2 == "" ' /etc/passwd
 ```
+
 `END`在处理完最后一行后执行：
 
-```sh
+```
 awk 'END { print NR }'
 ```
+
 算术运算与变量
+
 求第一列中所有数字之和/平均数
 
-```sh
+```
 { s = s + $1 }      # 不必考虑初始化问题
 END { print s, s/NR}
     { s += $1 }     # 类似c的速记
@@ -118,13 +128,15 @@ END { print NR, nw, nc }
 
 计算文件页数，每页66行
 
-```sh
+```
 wc $* |
 awk '!/totoal$/ { n += int(($1+55) / 56) }
     END     { print n }'
 ```
+
 字符串变量被初始化为空字符串。
 
+```
 内置变量	说明
 FILENAME	当前输入文件名
 FS	域分隔符（默认为空格和Tab）
@@ -134,7 +146,10 @@ OFMT	数字的输出格式（默认为%g）
 OFS	输出域分隔符串（默认为空格）
 ORS	输出记录分隔符串（默认为换行符）
 RS	输入记录分隔符字符（默认为换行符）
+```
+
 控制流
+
 example: 查找相邻的、成对的、完全相同的单词
 
 ```
@@ -153,7 +168,9 @@ NF > 0 {
         lastword = $NF
 } ' $*
 ```
+
 数组
+
 example:将每个输入行收集到单个数组元素中，以行数为索引，然后以逆序将其打印输出
 
 ```
@@ -164,7 +181,8 @@ END {
         print line[i]
 } ' $*
 ```
-n = split(s, arr, seq) 将字符串s分成若干字段，并把这些字段分别保存在数组arr从1至n的元素中。若提供了分隔符字符seq，则使用它；否则，使用FS的当前值。
+
+`n = split(s, arr, seq)` 将字符串s分成若干字段，并把这些字段分别保存在数组arr从1至n的元素中。若提供了分隔符字符seq，则使用它；否则，使用FS的当前值。
 
 ```
 sed 1q /etc/passwd | awk '{
@@ -178,18 +196,20 @@ echo 9/29/83 | awk '{
 ```
 awk的内置函数
 
-内置函数	说明
-cons(expr)	expr的余弦
-exp(expr)	expr的指数
-Getline()	读入下一个输入行，若是文件尾，则返回0;否则返回1
-index(string, substr)	string中字符串substr的位置，若不存在，则返回0
-int(expr)	expr的整数部分
-lenght(s)	字符串s的长度
-log(expr)	expr的自然对数
-sin(expr)	expr的正弦
-Split(s, a, c)	以c为分隔符将s分隔至a[1],...,a[n]返回n
-sprintf(fmt,...)	根据格式fmt格式化
-substr(s, m, n)	起始于位置m的字串s的n个字符的子串
+| 内置函数              | 说明                                            |
+|----------------------:|:------------------------------------------------|
+| cons(expr)            | expr的余弦                                      |
+| exp(expr)             | expr的指数                                      |
+| Getline()             | 读入下一个输入行，若是文件尾，则返回0;否则返回1 |
+| index(string, substr) | string中字符串substr的位置，若不存在，则返回0   |
+| int(expr)             | expr的整数部分                                  |
+| lenght(s)             | 字符串s的长度                                   |
+| log(expr)             | expr的自然对数                                  |
+| sin(expr)             | expr的正弦                                      |
+| Split(s, a, c)        | 以c为分隔符将s分隔至a[1],...,a[n]返回n          |
+| sprintf(fmt,...)      | 根据格式fmt格式化                               |
+| substr(s, m, n)       | 起始于位置m的字串s的n个字符的子串               |
+
 关联数组
 ```
     { sum[$1] += $2 }
@@ -206,10 +226,12 @@ awk ' {
             print word, num[word]
     } ' $*
 ```
+
 字符串
+
 example: 将较长的行调整为80列
 
-```sh
+```
 awk '
 BEGIN {
     N = 80              # fold at column 80
@@ -230,6 +252,7 @@ BEGIN {
 ```
 
 与shell的交互作用
+
 ```
 awk '{ print $'$1' }'
 awk "{ print \$$1 }"
@@ -239,9 +262,10 @@ awk '
     { s += $'$1' }
 END { print s } '
 ```
+
 example:对n个列中的每个列分别单独求和，然后再将各列之和相加
 
-```sh
+```
 awk '
 BEGIN {n = '$1'}
 {
@@ -256,9 +280,11 @@ END {
     printf "; totoal = %6g\n", totoal
 } '
 ```
+
 基于 awk 的日历服务
+
 ## calendar: version 3 -- today and tomorrow
-```sh
+```
 awk < $HOME/calendar '
 BEGIN {
     x = "Jan 31 Feb 28 Mar 31 Apr 30 May 31 Jun 30 " \
