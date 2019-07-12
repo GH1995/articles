@@ -1,5 +1,5 @@
 ---
-title: 困学纪闻注：PAC
+title: 困学纪闻注：PCA
 date: 2019-03-18 13:02:52
 tags:
     - deep learning
@@ -7,7 +7,7 @@ tags:
     - todo
 ---
 
-PAC(Principal Component Analysis, PAC) 数据降维方法，转换后数据的**方差最大**。
+PCA(Principal Component Analysis, PCA) 数据降维方法，转换后数据的**方差最大**。
 
 选择数据方差最大的方向进行投影，才能最大化数据的差异性，保留更多的原始数据信息。
 
@@ -26,7 +26,7 @@ $$
 \begin{aligned} \sigma(X ; \mathbf{w}) &=\frac{1}{N} \sum_{n=1}^{N}\left(\mathbf{w}^{\mathrm{T}} \mathbf{x}^{(n)}-\mathbf{w}^{\mathrm{T}} \overline{\mathbf{x}}\right)^{2} \\ &=\frac{1}{N}\left(\mathbf{w}^{\mathrm{T}} X-\mathbf{w}^{\mathrm{T}} \overline{X}\right)\left(\mathbf{w}^{\mathrm{T}} X-\mathbf{w}^{\mathrm{T}} \overline{X}\right)^{\mathrm{T}} \\ &=\mathbf{w}^{\mathrm{T}} S \mathbf{w} \end{aligned}
 $$
 
-$ S=\frac{1}{N}(X-\overline{X})(X-\overline{X})^{\mathrm{T}} $ 是原始样本的协方差矩阵。
+$S=\frac{1}{N}(X-\overline{X})(X-\overline{X})^{\mathrm{T}}$ 是原始样本的协方差矩阵。
 
 ## 拉格朗日法求最大投影方差
 
