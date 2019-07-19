@@ -1,5 +1,7 @@
 ---
 title: 明夷待访录（四）：Spark SQL
+categories:
+  - spark
 tags:
 ---
 

@@ -1,5 +1,7 @@
 ---
 title: '明夷待访录（五）：Spark Steaming '
+categories:
+  - spark
 tags:
 ---
 
