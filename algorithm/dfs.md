@@ -1,5 +1,7 @@
 ---
 title: dfs
+categories:
+  - algorithm
 date: 2019-08-02 00:06:38
 tags:
 ---
